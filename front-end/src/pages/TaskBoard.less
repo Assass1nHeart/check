@@ -1,0 +1,339 @@
+@font-face {
+  font-family: 'CustomFont';
+  src: url('../../assets/Font/XiangJiaoDaJiangJunLingGanTi-2.ttf')
+    format('truetype');
+  /* 可以添加更多字体格式，确保适配不同浏览器 */
+}
+
+::-webkit-scrollbar {
+  width: 0; /* 宽度设为最小 */
+  background: transparent; /* 背景透明 */
+}
+
+.header {
+  top: 0%;
+  position: relative;
+  display: inline-block;
+  font-size: xx-large;
+  width: 75%;
+  height: 100%;
+  background-color: rgb(red, 0.1);
+  /* 背景色 */
+  border: 2px dashed #ffffff;
+  /* 边框样式 */
+  border-radius: 20px;
+  padding: 10px;
+  /* 内边距 */
+  margin: 10px;
+  /* 外边距 */
+  text-align: center;
+  /* 文本居中 */
+  font-family: 'CustomFont';
+}
+
+.headerTitle {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  color: #efcea8;
+  /* 设置文字颜色为透明，以显示背景渐变色 */
+}
+
+.headerTitle:hover {
+  content: ' '; /* 使用伪元素插入一个空格 */
+}
+
+button {
+  all: unset;
+  display: inline-block;
+  background: none;
+  border-radius: 20px;
+  padding: 3px;
+  margin: 0px;
+  cursor: pointer;
+  font-size: medium;
+  border: #3f94a7 2px dashed;
+  text-transform: uppercase;
+  color: #4361ee;
+  font-weight: bold;
+  position: relative;
+  outline: none;
+  box-sizing: border-box;
+}
+
+button::before,
+button::after {
+  box-sizing: inherit;
+  position: absolute;
+  content: '';
+  border: 2px solid transparent;
+  width: 0;
+  height: 0;
+}
+
+button::after {
+  bottom: 0;
+  right: 0;
+}
+
+button::before {
+  top: 0;
+  left: 0;
+}
+
+button:hover {
+  border: 0;
+}
+button:hover::before,
+button:hover::after {
+  width: 100%;
+  height: 100%;
+}
+
+button:hover::before {
+  border-top-color: #4361ee;
+  border-right-color: #4361ee;
+  transition: width 0.3s ease-out, height 0.3s ease-out 0.3s;
+}
+
+button:hover::after {
+  border-bottom-color: #4361ee;
+  border-left-color: #4361ee;
+  transition: border-color 0s ease-out 0.6s, width 0.3s ease-out 0.6s,
+    height 0.3s ease-out 1s;
+}
+
+.MainBody {
+  background: url('../../assets/container.png') no-repeat center center/cover;
+}
+
+.container {
+  display: flex;
+  right: 0%;
+  height: 640px;
+  width: 100%;
+  // background: url("../../assets/container.png") no-repeat center center/cover;
+  border-radius: 20px;
+  justify-content: left;
+  /* 水平居中 */
+  align-items: center;
+  /* 垂直居中 */
+  overflow-x: scroll;
+}
+
+.column {
+  display: inline-block;
+  width: 292px;
+  height: 640px;
+  border-radius: 20px;
+  border: #383838 2px solid;
+}
+
+.todoColumn {
+  position: relative;
+  display: inline-block;
+  width: 250px;
+  height: 50%;
+  top: -25%;
+  background: rgb(#f3b88a, 0.3);
+  border-radius: 20px;
+  border: #383838 2px solid;
+  margin: 5px;
+}
+
+.todoColumn:hover {
+  display: inline-block;
+  width: 250px;
+  height: 100%;
+  top: 0%;
+  background: rgb(#c7b2a3, 0.7);
+  border-radius: 20px;
+  border: #b4dae9 2px solid;
+  margin: 5px;
+}
+
+.doingColumn {
+  position: relative;
+  display: inline-block;
+  width: 250px;
+  height: 50%;
+  top: -25%;
+  background-color: rgb(#a78cf1, 0.3);
+  border-radius: 20px;
+  border: #383838 2px solid;
+  margin: 5px;
+}
+
+.doingColumn:hover {
+  display: inline-block;
+  width: 250px;
+  height: 100%;
+  top: 0%;
+  background-color: rgb(#a78cf1, 0.7);
+  border-radius: 20px;
+  border: #b4dae9 2px solid;
+  margin: 5px;
+}
+
+.doneColumn {
+  position: relative;
+  display: inline-block;
+  width: 250px;
+  height: 50%;
+  top: -25%;
+  background-color: rgb(#f9a3d8, 0.3);
+  border-radius: 20px;
+  border: #383838 2px solid;
+  margin: 5px;
+}
+
+.doneColumn:hover {
+  display: inline-block;
+  width: 250px;
+  height: 100%;
+  top: 0%;
+  background-color: rgb(#f9a3d8, 0.7);
+  border-radius: 20px;
+  border: #b4dae9 2px solid;
+  margin: 5px;
+}
+
+.columnTitle {
+  color: #3f94a7;
+  text-align: center;
+  font-size: 30px;
+  font-family: 'CustomFont';
+  font-weight: 600;
+  line-height: 40px;
+  margin: 0 10px;
+}
+
+.columnTitle:hover {
+  color: #000000;
+  text-align: center;
+  font-size: 30px;
+  font-family: 'CustomFont';
+  font-weight: 600;
+  line-height: 40px;
+  margin: 0 10px;
+  background-color: rgb(white, 0.5);
+  border-radius: 20px;
+  border: #f9a3d8 2px dashed;
+}
+
+.columnContent {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 80%;
+  top: 0%;
+  overflow: au;
+}
+
+.columnContentActive {
+  overflow: auto;
+  height: 600px;
+  background: #ccecff;
+  border: 2px solid #1b9aee;
+}
+
+.issue {
+  position: relative;
+  height: auto;
+  width: auto;
+  text-align: center;
+  padding: 10px 10px;
+  background: rgb(#e49a31, 0.3);
+  border-radius: 10px;
+  margin: 8px 10px;
+  border: #383838 2px solid;
+}
+
+.issuePress {
+  position: relative;
+  min-height: 20px;
+  padding: 14px 44px;
+  background: #bcd7eb;
+  margin: 8px 10px;
+  border: #c7b2a3 2px solid;
+  border-radius: 10px;
+}
+
+.issueDragging {
+  position: relative;
+  min-height: 20px;
+  padding: 14px 44px;
+  background: #f0f8f9;
+  opacity: 0.9;
+  margin: 8px 10px;
+  border-radius: 10px;
+}
+
+.Input {
+  display: block;
+  position: relative;
+  background-color: transparent;
+  border: none;
+  width: 180%;
+  right: 40%;
+}
+
+.dustbin {
+  position: relative;
+  display: inline-block;
+  width: 20%;
+  height: 20%;
+  background-color: rgb(red, 0.1);
+  /* 背景色 */
+  border: 2px dashed #ffffff;
+  /* 边框样式 */
+  padding: 10px;
+  /* 内边距 */
+  margin-bottom: 10px;
+  text-align: center;
+  /* 文本居中 */
+  // top: -20px;
+  font-family: 'CustomFont';
+  // position: relative;
+  // display: inline-block;
+  // width: 20%;
+  // height: 50%;
+  // top:-25%;
+  // background: rgb(#f3b88a,0.3);
+  // border-radius: 20px;
+  // border: #383838 2px solid;
+}
+
+.dustbinTitle {
+  font-size: 18px;
+  /* 标题字体大小 */
+  font-weight: bold;
+  /* 标题字体加粗 */
+  font-family: 'CustomFont';
+}
+
+.dustbinContent {
+  background-color: rgb(#f1d0e5, 0.3);
+  /* 内容背景色 */
+  padding: 10px;
+  /* 内边距 */
+  top: 100%;
+  height: 60%;
+  width: 100%;
+  font-size: 150%;
+  font-family: 'CustomFont';
+}
+
+.dustbinContentActive {
+  background-color: #ff9999;
+  /* 拖拽过程中的背景色 */
+  border-radius: 20px;
+  padding: 10px;
+  /* 内边距 */
+  height: 60%;
+  width: 100%;
+  font-size: larger;
+  color: white;
+  font-family: 'Arial Narrow Bold', sans-serif;
+}
